@@ -2,7 +2,13 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 text-center-xs">
-          <h1 id="merchant-name" class="text-center-xs">Interflora Danmark A/S</h1>
+        <h1 id="merchant-name" class="text-center-xs">
+        {% if model.variables.shopname %}
+          {{ model.variables.shopname }}
+        {% else %}
+          {{ model.displayname }}
+        {% endif %}
+        </h1>
       </div>
     </div>
     {% include "order_info" %}
